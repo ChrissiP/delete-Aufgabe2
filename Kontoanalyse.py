@@ -5,12 +5,13 @@ with open("tsjson/accounts.json","r") as Datei:
 #Lade die JSON-Daten aus der Datei
     Liste = json.load(Datei)
     print(json.dumps(Liste, indent=10))
-    
-#Abfrage Benutzer nach Alter
-
-age = input ("Bitte geben Sie 'alter' ein, um das Konto mit grösser 25 zu finden: ")
-if age == "alter":
-    #Sucht die Konten die grösser als 25 Jahre alt sind
+  
+print("_________________________________________________________________________________________________________________________________________")
+print("\nKontoanalyse: \n")
+    #Abfrage Konto grösser 25 Jahre oder höchste Kontostand
+eingabe = input ("Bitte geben Sie 'alter' ein, um das Konto mit grösser 25 zu finden oder 'kontostand' um den höchsten Kontostand zu finden: ")
+if eingabe == "alter":
+        #Sucht die Konten die grösser als 25 Jahre alt sind
     for user_accounts in Liste:
         if user_accounts["age"] > 25:
             #Konto wird angezeigt
@@ -24,9 +25,8 @@ if age == "alter":
             print("E-Mail:", user_accounts["email"])
             print("_________________________________________________________________________________")
         else: 
-            print("\nVielen Dank für Ihren Besuch!")
-balance = input ("\nBitte geben Sie 'kontostand' ein, um den höchsten Kontostand zu finden: ")
-if balance == "kontostand":
+            print("\nVielen Dank für Ihren Besuch!\n")
+if eingabe == "kontostand":
     max_balance = 0
     #Sucht das Konto mit dem höchsten Kontostand
     for user_accounts in Liste:
@@ -36,4 +36,5 @@ if balance == "kontostand":
             max_balance= sum
         #Konto wird angezeigt
     print("\nGehalt:",max_balance)
+    print("\nVielen Dank für Ihren Besuch!\n")
             

@@ -1,6 +1,6 @@
 import json
 #Öffne die Datei
-with open("tsjson/accounts.json") as Datei:
+with open("tsjson/accounts.json","r") as Datei:
     print(type(Datei))
 #Lade die JSON-Daten aus der Datei
     Liste = json.load(Datei)
